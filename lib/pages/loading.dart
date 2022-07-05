@@ -15,6 +15,7 @@ class _LoadingState extends State<Loading> {
   void setupWorldTime() async {
     WorldTime instance = WorldTime(location: 'Harare', flag: 'zimbabwean_flag.png', url: 'Africa/Harare');
     await instance.getTime();
+
     print(instance.time);
 
     Navigator.pushReplacementNamed(context, '/home', arguments: {
@@ -31,10 +32,11 @@ class _LoadingState extends State<Loading> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text(
-        'Loading Screen'
-      ),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(50.0),
+        child: Text('loading'),
+      )
     );
   }
 }
