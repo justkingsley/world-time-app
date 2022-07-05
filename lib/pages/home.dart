@@ -9,26 +9,53 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  Map map = {};
+  Map data = {};
 
   @override
   Widget build(BuildContext context) {
 
-    map = ModalRoute.of(context)!.settings.arguments as Map;
+    data = ModalRoute.of(context)!.settings.arguments as Map;
+    print(data);
 
     return Scaffold(
 
-      body: SafeArea( //moves widgets into safe area
-        child: Column(
-            children: [
-              TextButton.icon(
-                  onPressed: () {
-                    //Pushing to another screen, screen will exist underneath but we are pushing another one
-                    Navigator.pushNamed(context, '/location');
-                  },
-                  icon: const Icon(Icons.location_on),
-                  label: const Text('Edit Location'))
-            ],
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 180.0, 0.0, 0.0),
+        child: SafeArea( //moves widgets into safe area
+          child: Column(
+              children: [
+                TextButton.icon(
+                    onPressed: () {
+                      //Pushing to another screen, screen will exist underneath but we are pushing another one
+                      Navigator.pushNamed(context, '/location');
+                    },
+                    icon: const Icon(Icons.edit_location_alt_outlined),
+                    label: const Text('Edit Location')),
+
+                const SizedBox(height: 10.0,),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      data['location'],
+                      style: const TextStyle(
+                        fontSize: 24.0,
+                        letterSpacing: 2.0,
+                      ),
+                    )
+                  ],
+                ),
+
+                const SizedBox(height: 10.0,),
+
+                Text(data['time'],
+                  style: const TextStyle(
+                    fontSize: 16.0,
+                  ),
+                )
+              ],
+          ),
         ),
       ),
     );

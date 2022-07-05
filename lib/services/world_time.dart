@@ -35,8 +35,9 @@ class WorldTime{
 
       //setting time property
       time = DateFormat.jm().format(now);
+
     }catch(e){
-      time = 'Failed to load time $e';
+      print('Caught Error $e');
     }
 
   }
