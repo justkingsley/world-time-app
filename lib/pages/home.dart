@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
 
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(0.0, 180.0, 0.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(0.0, 280.0, 0.0, 0.0),
         child: SafeArea( //moves widgets into safe area
           child: Column(
               children: [
@@ -40,18 +40,20 @@ class _HomeState extends State<Home> {
                     Text(
                       data['location'],
                       style: const TextStyle(
-                        fontSize: 24.0,
+                        fontSize: 26.0,
                         letterSpacing: 2.0,
+                        fontWeight: FontWeight.w400,
                       ),
                     )
                   ],
                 ),
 
-                const SizedBox(height: 10.0,),
+                const SizedBox(height: 20.0,),
 
                 Text(data['time'],
                   style: const TextStyle(
-                    fontSize: 16.0,
+                    fontSize: 56.0,
+                    fontWeight: FontWeight.w600,
                   ),
                 )
               ],
