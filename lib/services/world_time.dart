@@ -24,9 +24,6 @@ class WorldTime{
     String datetime = data['datetime'];
     String offset = data['utc_offset'].substring(1, 3);
 
-    // print(datetime);
-    // print(offset);
-
     //creating date time object
     DateTime now = DateTime.parse(datetime);
 

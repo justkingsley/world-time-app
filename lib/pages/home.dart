@@ -8,8 +8,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  Map map = {};
+
   @override
   Widget build(BuildContext context) {
+
+    map = ModalRoute.of(context)!.settings.arguments as Map;
+
     return Scaffold(
 
       body: SafeArea( //moves widgets into safe area
