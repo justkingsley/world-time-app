@@ -17,7 +17,6 @@ class WorldTime{
 
     Future<void> getTime() async {
 
-
     try{
       var myUrl = Uri.parse('http://worldtimeapi.org/api/timezone/$url');
       var response = await http.get(myUrl);
@@ -25,13 +24,9 @@ class WorldTime{
 
       //get properties from data
       String datetime = data['datetime'];
-      String offset = data['utc_offset'].substring(1, 3);
 
       //creating date time object
-      DateTime now = DateTime.parse(datetime);
-
-      //Converting String to int
-      now = now.add(Duration(hours: int.parse(offset)));
+      DateTime now = DateTime.parse(datetime.substring(0,26));
 
       //setting time property
       time = DateFormat.jm().format(now);
