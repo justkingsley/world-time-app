@@ -8,8 +8,9 @@ class WorldTime{
   String time = "";
   String flag;
   String url;
+  late bool isDayTime;
 
-  WorldTime({ required this.location, required this.flag, required this.url});
+  WorldTime({required this.url, required this.location, required this.flag});
 
   //make request
   //Future, temporary placeholder value that lets dart know when an async function is complete.
@@ -28,7 +29,10 @@ class WorldTime{
       //creating date time object
       DateTime now = DateTime.parse(datetime.substring(0,26));
 
-      //setting time property
+      //ternary operator to see whether it's day or night
+      isDayTime = now.hour > 6 && now.hour < 18 ? true : false;
+
+      //formatting date time
       time = DateFormat.jm().format(now);
 
     }catch(e){

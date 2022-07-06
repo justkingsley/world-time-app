@@ -15,6 +15,14 @@ Just run the project
 - creating branches in git
 - formatting dates and time using intl package
 - using spinners for loading screens
+- using the ternary operator
+- using late for none-null variables, an exception will be thrown if the variable is accessed without being initialized.
+- popping screens off
+- using async on buttons
+- using the listview widget and returning values
 
 ## Tid bits 
 - importing using package: 
+
+## Image Credits
+- day and night image sourced from behance : url(https://www.behance.net/gallery/147553033/Drop-(2022)/modules/833609419)
