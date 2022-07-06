@@ -26,3 +26,7 @@ Just run the project
 
 ## Image Credits
 - day and night image sourced from behance : url(https://www.behance.net/gallery/147553033/Drop-(2022)/modules/833609419)
+
+## To Do
+- add the world flag api and get flag data from it
+- add world map images.t
