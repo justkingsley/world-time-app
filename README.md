@@ -30,3 +30,9 @@ Just run the project
 ## To Do
 - add the world flag api and get flag data from it
 - add world map images.t
+
+## Screenshots
+- HomeScreen : Day Time
+<img src="https://github.com/justkingsley/world-time-app/blob/main/screenshots/daytime.png" width="200">
+- HomeScreen: Night Time
+<img src="https://github.com/justkingsley/world-time-app/blob/main/screenshots/nighttime.png" width="200">
