@@ -8,15 +8,15 @@ class WorldTime{
   String time = "";
   String flag;
   String url;
+  late bool isDayTime;
 
-  WorldTime({ required this.location, required this.flag, required this.url});
+  WorldTime({required this.url, required this.location, required this.flag});
 
   //make request
   //Future, temporary placeholder value that lets dart know when an async function is complete.
   //This helps the await know when it's complete.
 
     Future<void> getTime() async {
-
 
     try{
       var myUrl = Uri.parse('http://worldtimeapi.org/api/timezone/$url');
@@ -25,15 +25,14 @@ class WorldTime{
 
       //get properties from data
       String datetime = data['datetime'];
-      String offset = data['utc_offset'].substring(1, 3);
 
       //creating date time object
-      DateTime now = DateTime.parse(datetime);
+      DateTime now = DateTime.parse(datetime.substring(0,26));
 
-      //Converting String to int
-      now = now.add(Duration(hours: int.parse(offset)));
+      //ternary operator to see whether it's day or night
+      isDayTime = now.hour > 6 && now.hour < 18 ? true : false;
 
-      //setting time property
+      //formatting date time
       time = DateFormat.jm().format(now);
 
     }catch(e){
